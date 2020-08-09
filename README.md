@@ -1,4 +1,44 @@
+
+[//]: # (Image References)
+
+[screen-shot]: ./imgs/ss.png "Simulator"
+
+# Udacity CarND Capstone Project
+
+![screen-shot]
+
+[![Udacity - Self-Driving Car NanoDegree](https://s3.amazonaws.com/udacity-sdc/github/shield-carnd.svg)](http://www.udacity.com/drive)
+
 This is the project repo for the final project of the Udacity Self-Driving Car Nanodegree: Programming a Real Self-Driving Car. For more information about the project, see the project introduction [here](https://classroom.udacity.com/nanodegrees/nd013/parts/6047fe34-d93c-4f50-8336-b70ef10cb4b2/modules/e1a23b06-329a-4684-a717-ad476f0d8dff/lessons/462c933d-9f24-42d3-8bdc-a08a5fc866e4/concepts/5ab4b122-83e6-436d-850f-9f4d26627fd9).
+
+### Individual Submission
+Name 			 | Udacity Account Email
+---------------- | ---------------------
+Marko Dragojevic | marko.dragojevic@rt-rk.com
+
+## Overview
+
+Implemented functionality overview is given in this section
+
+### Waypoint Updater
+
+Waypoint Updater node implements functionality of using predefined list of waypoints and information about car's current position to determin to which waypoint car should move next. In addition to this, this node is also responsible for 'issuing' stop commands on traffic lights, once it has been notified of red traffic light existance.
+
+### Drive By Wire (DBW)
+
+This node implements functionality of 'drive-by-wire'. It is responsible for direct communication with vehicle's platform. For control of throttle PID controller is used. YawController is used for calculating desired steering angle.
+
+### Traffic Light Detection/Classification
+
+Final part of this project is traffic light detector/classifier node which is responsbile for publishing target stop waypoint index of next red traffic light. This information is then used by waypoint updater in order to generate stopping trajectory. 
+
+In order to detect which state of traffic light is currently present pretrained tensorflow model (SSD_Mobilenet version 11.6.17).
+
+[Tensorflow object detection API](https://github.com/tensorflow/models/tree/master/research/object_detection) and [Tensorflow Model Zoo](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/tf1_detection_zoo.md) was for purpose of retraining/evaluating performances of mentioned model.
+
+Existing dataset was used to retrain the model and it can be found [here](https://drive.google.com/file/d/0B-Eiyn-CUQtxdUZWMkFfQzdObUE/view).
+
+# Installation
 
 Please use **one** of the two installation options, either native **or** docker installation.
 
