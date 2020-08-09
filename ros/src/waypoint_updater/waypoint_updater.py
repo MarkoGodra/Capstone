@@ -25,6 +25,7 @@ TODO (for Yousuf and Aaron): Stopline location for each traffic light.
 
 LOOKAHEAD_WPS = 50 # Number of waypoints we will publish. You can change this number
 MAX_DECEL = 0.5
+LINEAR_DECEL = 1 / LOOKAHEAD_WPS
 
 class WaypointUpdater(object):
     def __init__(self):
@@ -97,7 +98,7 @@ class WaypointUpdater(object):
 
             stop_idx = max(self.stopline_wp_idx - closest_idx - 2, 0)
             dist = self.distance(waypoints, i, stop_idx)
-            vel = math.sqrt(2 * MAX_DECEL * dist)
+            vel = math.sqrt(2 * MAX_DECEL * dist) + (i * LINEAR_DECEL)
             if vel < 1.0:
                 vel = 0.0
 

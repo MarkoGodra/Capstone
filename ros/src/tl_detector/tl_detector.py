@@ -142,7 +142,7 @@ class TLDetector(object):
             int: ID of traffic light color (specified in styx_msgs/TrafficLight)
 
         """
-        clostest_light = None
+        closest_light = None
         line_wp_idx = None
 
         # If we receive image callback before waypoints callback don't do processing
