@@ -14,7 +14,7 @@ This is the project repo for the final project of the Udacity Self-Driving Car N
 ### Individual Submission
 Name 			 | Udacity Account Email
 ---------------- | ---------------------
-Marko Dragojevic | marko.dragojevic@rt-rk.com
+Marko Dragojevic | marko.godra@gmail.com
 
 ## Overview
 
